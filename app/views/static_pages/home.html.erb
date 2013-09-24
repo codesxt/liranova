@@ -1,6 +1,9 @@
 <% if signed_in? %>
   <div class="row">
     <aside class="span4">
+	  <section>
+	    <%= render 'shared/user_navigation' %>
+	  </section>
       <section>
         <%= render 'shared/user_info' %>
       </section>
@@ -12,21 +15,19 @@
       </section>
     </aside>
     <div class="span8">
-      <h3>Micropost Feed</h3>
+      <h3>Publicaciones</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
   <div class="center hero-unit">
-    <h1>Welcome to the Sample App</h1>
+    <h1>Bienvenido a Liranova</h1>
 
     <h2>
-      This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
+      Liranova es una plataforma de Literatura Libre para escritores y lectores.
     </h2>
 
-    <%= link_to "Sign up now!", signup_path,
+    <%= link_to "¡Regístrate ahora!", signup_path,
                                 class: "btn btn-large btn-primary" %>
   </div>
 

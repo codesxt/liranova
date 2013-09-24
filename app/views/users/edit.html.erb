@@ -1,27 +1,27 @@
-<% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<% provide(:title, "Actualizar el perfil") %>
+<h1>Actualizar el perfil</h1>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "Nombre" %>
       <%= f.text_field :name %>
 
-      <%= f.label :email %>
+      <%= f.label :email, "Correo" %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "Contraseña" %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.label :password_confirmation, "Confirar Contraseña" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <%= f.submit "Guardar cambios", class: "btn btn-large btn-primary" %>
     <% end %>
 
     <%= gravatar_for(@user) %>
-    <a href="http://gravatar.com/emails">change</a>
+    <a href="http://gravatar.com/emails">Cambiar foto de perfil</a>
   </div>
 </div>

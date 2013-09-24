@@ -1,0 +1,21 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+	  <section>
+	    <%= render 'shared/user_navigation' %>
+	  </section>
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Escritorio</h3>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </div>
+  </div>
+<% end %>

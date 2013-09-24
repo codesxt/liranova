@@ -14,6 +14,6 @@
       <%= f.submit "Acceder", class: "btn btn-large btn-primary" %>
     <% end %>
 
-    <p>¿Usuario nuevo? <%= link_to "¡Regístrate ya!", signup_path %></p>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
