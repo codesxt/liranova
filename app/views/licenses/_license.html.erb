@@ -1,0 +1,8 @@
+<li>
+  <%= link_to license.name, license %>
+  <% if current_user.admin?%>
+    | <%= link_to "editar", edit_license_path(license) %>
+    | <%= link_to "eliminar", license, method: :delete,
+                                  data: { confirm: "¿Seguro de que quieres borrar la licencia?" } %>
+  <% end %>
+</li>
