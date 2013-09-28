@@ -1,8 +1,10 @@
 <% provide(:title, 'Licencias') %>
 <h1>Lista de Licencias</h1>
 
-<% if current_user.admin? %>
-	<%= link_to "Añadir nueva Licencia", new_license_path %>
+<% if signed_in? %>
+	<% if current_user.admin? %>
+		<%= link_to "Añadir nueva Licencia", new_license_path %>
+	<% end %>
 <% end %>
 
 <%= will_paginate %>

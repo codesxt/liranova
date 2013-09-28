@@ -1,6 +1,5 @@
 class LicensesController < ApplicationController
-  before_action :signed_in_user,
-                only: [:index]
+  #before_action :signed_in_user, only: [:index]
   before_action :admin_user,     only: [:create, :edit, :update, :destroy]
 
   def index
