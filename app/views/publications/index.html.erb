@@ -1,0 +1,10 @@
+<% provide(:title, 'Todas las Publicaciones') %>
+<h1>Todas las Publicaciones (<%= Publication.count %>)</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @publications %>
+</ul>
+
+<%= will_paginate %>

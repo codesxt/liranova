@@ -1,0 +1,10 @@
+<%= form_for(@publication) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Título" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Contenido..." %>
+  </div>
+  <%= f.submit "Publicar", class: "btn btn-large btn-primary" %>
+<% end %>

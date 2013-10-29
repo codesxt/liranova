@@ -1,0 +1,11 @@
+<% provide(:title, @publication.title) %>
+<span class='content'><h2><%= @publication.title %></h2></span>
+<span class='content'><h2><%= @publication.content %></h2></span>
+<span class="timestamp">
+  Publicado en <%= @publication.created_at%>.
+</span>
+<% if current_user?(@publication.user) %>
+<%= link_to "Borrar", @publication, method: :delete,
+								 data: { confirm: "¿Seguro?" },
+								 title: @publication.title %>
+<% end %>

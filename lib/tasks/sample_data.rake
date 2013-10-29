@@ -4,6 +4,7 @@ namespace :db do
     make_users
     make_microposts
     make_relationships
+    make_publications
   end
 end
 
@@ -24,9 +25,18 @@ def make_users
   end
 end
 
+def make_publications
+  users = User.all(limit: 6)
+  10.times do
+    title = Faker::Lorem.sentence(3)
+    content = Faker::Lorem.sentence(50)
+    users.each { |user| user.publications.create!(title: title, content: content) }
+  end
+end
+
 def make_microposts
   users = User.all(limit: 6)
-  50.times do
+  10.times do
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
   end

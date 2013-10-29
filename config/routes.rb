@@ -6,6 +6,7 @@ Liranova::Application.routes.draw do
   end
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]
+  resources :publications,    only: [:create, :destroy, :index, :show]
   resources :relationships, only: [:create, :destroy]
   resources :licenses
   root  'static_pages#home'
@@ -18,6 +19,9 @@ Liranova::Application.routes.draw do
   match '/dashboard', to: 'dashboard#index', via: 'get'
   match '/desktop', to: 'desktop#index', via: 'get'
   match '/library', to: 'library#index', via: 'get'
+  match '/random', to: 'publications#show_random', via: 'get'
+  match '/new', to: 'publications#new', via: 'get'
+  match '/feed', to: 'library#show_feed', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -13,9 +13,9 @@
     </aside>
     <div class="span8">
       <h3>Biblioteca</h3>
-	<section>
-		<%= render 'shared/feed' %>
-	</section>
+      <%= link_to "Ver todas las publicaciones", publications_path %><br>
+      <%= link_to "Ver una publicación al azar", random_path %><br>
+      <%= link_to "Ver publicaciones de suscripciones", feed_path %>
     </div>
   </div>
 <% end %>

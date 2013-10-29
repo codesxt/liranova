@@ -1,0 +1,12 @@
+<li>
+  <span class="content"><h2><%= publication.title %></h2></span>
+  <span class="content"><%= publication.content %></span>
+  <span class="timestamp">
+    Publicado en <%= publication.created_at%>.
+  </span>
+  <% if current_user?(publication.user) %>
+    <%= link_to "Borrar", publication, method: :delete,
+                                     data: { confirm: "¿Seguro?" },
+                                     title: publication.title %>
+  <% end %>
+</li>
