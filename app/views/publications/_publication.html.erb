@@ -1,6 +1,6 @@
-<li>
-  <span class="content"><h2><%= publication.title %></h2></span>
-  <span class="content"><%= publication.content %></span>
+<li class="publication_small">
+  <span class="publication_small_title"><h2><%= link_to publication.title, publication_path(publication.id)%></h2></span>
+  <span class="publication_small_content"><%= publication.content %></span>
   <span class="timestamp">
     Publicado en <%= publication.created_at%>.
   </span>
