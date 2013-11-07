@@ -8,6 +8,8 @@ class PublicationsController < ApplicationController
   
   def show
     @publication = Publication.find(params[:id])
+    @comments = @publication.comments.all
+    @new_comment = Comment.new
   end
 
   def new

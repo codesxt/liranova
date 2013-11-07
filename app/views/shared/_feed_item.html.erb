@@ -1,10 +1,10 @@
-<li id="<%= feed_item.id %>">
-  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+<li id="<%= feed_item.id %>" class="publication_small">
+  <% link_to gravatar_for(feed_item.user), feed_item.user %>
     <span class="user">
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
-    <span class="content"><h2><%= feed_item.title %></h2></span><br>
-    <span class="content"><%= feed_item.content %></span>
+    <span class="publication_small_title"><h2><%= link_to feed_item.title, publication_path(feed_item.id)%></h2></span>
+    <span class="publication_small_content"><%= feed_item.content %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>

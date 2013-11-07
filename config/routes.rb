@@ -6,7 +6,10 @@ Liranova::Application.routes.draw do
   end
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]
-  resources :publications,    only: [:create, :destroy, :index, :show]
+  resources :publications do
+    
+  end
+  resources :comments
   resources :relationships, only: [:create, :destroy]
   resources :licenses
   root  'static_pages#home'

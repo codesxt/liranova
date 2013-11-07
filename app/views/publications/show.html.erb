@@ -9,3 +9,7 @@
 								 data: { confirm: "¿Seguro?" },
 								 title: @publication.title %>
 <% end %>
+<%= render 'shared/comments' %>
+<% if signed_in? %>
+	<%= render 'shared/comment_form' %>
+<% end %>

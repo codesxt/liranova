@@ -212,7 +212,6 @@ input {
   list-style: none;
   margin: 0;
   li {
-    overflow: auto;
     padding: 10px 0;
     border-top: 1px solid $grayLighter;
     &:last-child {
@@ -269,8 +268,11 @@ aside {
     text-align: justify;
     text-justify: distribute;
     padding: 0px 10px;
-    hyphens: auto;
   }
+}
+
+.comment{
+  min-height: 50px;
 }
 
 /* Barra de navegación */

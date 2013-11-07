@@ -1,0 +1,10 @@
+<% provide(:title, 'Todas los comentarios') %>
+<h1>Todas los comentarios (<%= Comment.count %>)</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @comments %>
+</ul>
+
+<%= will_paginate %>

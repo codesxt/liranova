@@ -1,0 +1,15 @@
+<li class="publication_small">
+  <%= link_to gravatar_for(comment.user), comment.user %>
+    <span class="user">
+      <%= link_to comment.user.name, comment.user %>
+    </span>
+  <span class="publication_small_content"><%= comment.content %></span>
+  <span class="timestamp">
+    Publicado en <%= comment.created_at%>.
+  </span>
+  <% if current_user?(comment.user) %>
+    <%= link_to "Borrar", comment, method: :delete,
+                                     data: { confirm: "¿Seguro?" },
+                                     title: "Comentario" %>
+  <% end %>
+</li>
