@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131225215355) do
+ActiveRecord::Schema.define(version: 20131226142330) do
 
   create_table "comments", force: true do |t|
     t.integer  "publication_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131225215355) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "status",     default: false
+    t.integer  "license",    default: 4
   end
 
   add_index "publications", ["user_id", "created_at"], name: "index_publications_on_user_id_and_created_at"

@@ -3,12 +3,14 @@
     <%= render "shared/user_aside" %>
     <div class="span8">
       <h3>Escritorio</h3>
-      <section>
+      <div class="span3 btn">
+        <i class="icon-edit"></i>
         <%= link_to "Publicar nuevo", new_path %>
-      </section>
-      <section>
+      </div>
+      <div class="span3 btn">
+        <i class="icon-th-list"></i>
         <%= link_to "Mostrar borradores", show_drafts_path %>
-      </section>
+      </div>
     </div>
   </div>
 <% end %>

@@ -9,5 +9,8 @@
   <div class="form-control">
   	<%= f.select :status, options_for_select([["Publicado", "true"], ["Borrador", "false"]]) %>
   </div>
+  <div class="form-control">
+    <%= f.select :license, License.all.collect {|p| [ p.name, p.id ] }%>
+  </div>
   <%= f.submit "Publicar", class: "btn btn-large btn-primary" %>
 <% end %>

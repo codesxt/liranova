@@ -40,11 +40,18 @@ def make_relationships
 end
 
 def make_publications
-  users = User.all(limit: 6)
-  10.times do
+  users = User.all(limit: 10)
+  5.times do
     title = Faker::Lorem.sentence(3)
     content = Faker::Lorem.sentence(500)
-    users.each { |user| user.publications.create!(title: title, content: content) }
+    users.each { |user| user.publications.create!(title: title, content: content, status: true) }
+  end
+
+  users = User.all(limit: 10)
+  2.times do
+    title = Faker::Lorem.sentence(3)
+    content = Faker::Lorem.sentence(500)
+    users.each { |user| user.publications.create!(title: title, content: content, status: false) }
   end
 end
 

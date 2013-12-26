@@ -1,8 +1,11 @@
 <%= form_for(@new_comment) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <div class="field span8">
-    <%= f.text_area :content, placeholder: "Nuevo Comentario..." %>
+  <hr>
+  <div class="field span7">
+    <%= f.text_area :content, placeholder: "Nuevo Comentario...", rows: 4 %>
   </div>
   <%= f.hidden_field :publication_id, :value => @publication.id %>
-  <%= f.submit "Comentar", class: "btn btn-large btn-primary span4" %>
+  <div class="span3 offset1">
+  	<%= f.submit "Comentar", class: "btn btn-large btn-primary offset2 span3" %>
+  </div>
 <% end %>

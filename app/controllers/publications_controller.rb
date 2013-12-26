@@ -3,7 +3,7 @@ class PublicationsController < ApplicationController
   before_action :correct_user,   only: :destroy
   
   def index
-    @publications = Publication.paginate(page: params[:page]).where("status" => true)
+    @publications = Publication.where("status" => true).paginate(page: params[:page])
   end
   
   def show
@@ -62,7 +62,7 @@ class PublicationsController < ApplicationController
   private
 
     def publication_params
-      params.require(:publication).permit(:title, :content, :status)
+      params.require(:publication).permit(:title, :content, :status, :license)
     end
 
     def correct_user

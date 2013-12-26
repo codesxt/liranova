@@ -235,6 +235,10 @@ input {
 }
 .content {
   display: block;
+  text-align: justify;
+}
+.title{
+  font-size: 2em;
 }
 .timestamp {
   color: $grayLight;
@@ -278,6 +282,10 @@ aside {
     text-justify: distribute;
     padding: 0px 10px;
   }
+}
+
+.publication_small_draft{
+  background-color: #DDD;
 }
 
 .comment{

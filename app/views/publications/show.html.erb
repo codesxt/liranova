@@ -8,15 +8,15 @@
 		Publicado
 		<% end %>
 	</span>
-	<% if @publication.status == false %>
+	<% if @publication.status == false && current_user?(@publication.user) %>
 		<div class="field">
 	    	<%= f.text_field :title, placeholder: @publication.title %>
 	  	</div>
 	<% else %>
-		<span class='content'><h2><%= @publication.title %></h2></span>
+		<span class='content title'><h2><%= @publication.title %></h2></span>
 	<% end %>
 	
-	<% if @publication.status == false %>
+	<% if @publication.status == false && current_user?(@publication.user) %>
 		<div class="field">
 		    <%= f.text_area :content, placeholder: @publication.content %>
 		</div>
@@ -24,23 +24,30 @@
 		<span class='content'><h2><%= @publication.content %></h2></span>
 	<% end %>
 
-	<% if @publication.status == false %>
+	<% if @publication.status == false && current_user?(@publication.user) %>
 		<div class="form-control">
 	  		<%= f.select :status, options_for_select([["Publicado", "true"], ["Borrador", "false"]]) %>
 	  	</div>
+	  	<div class="form-control">
+		    <%= f.select :license, License.all.collect {|p| [ p.name, p.id ] }%>
+		</div>
 	  	<%= f.submit "Actualizar", class: "btn btn-large btn-primary" %>
+  	<% else %>
+  		<i class="icon-arrow-right"></i> <%= link_to "Licencia: " + License.find(@publication.license).name, license_path(@publication.license) %>
   	<% end %>
+
+  	
 
 	<span class="timestamp">
 	  Publicado en <%= @publication.created_at%>.
 	</span>
 	<span class="">
 	<br/>
-	<%= link_to "Autor: " + @publication.user.name, @publication.user %>
+	<i class="icon-user"></i> <%= link_to "Autor: " + @publication.user.name, @publication.user %>
 	</span><br/>
 
 	<% if current_user?(@publication.user) %>
-	<%= link_to "Borrar", @publication, method: :delete,
+	<i class="icon-remove"></i> <%= link_to "Borrar", @publication, method: :delete,
 									 data: { confirm: "¿Seguro?" },
 									 title: @publication.title %>
 	<% end %>

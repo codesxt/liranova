@@ -1,4 +1,8 @@
-<li class="publication_small">
+<li class="publication_small
+  <% if publication.status == false %>
+    publication_small_draft
+  <% end %>
+">
   <span class="publication_small_title"><h2><%= link_to "Título: "+ publication.title, publication_path(publication.id)%></h2></span>
   <span class="publication_small_content"><%= publication.content %></span>
   <span class="timestamp">
