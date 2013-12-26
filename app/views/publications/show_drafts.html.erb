@@ -1,5 +1,5 @@
 <% provide(:title, 'Todas las Publicaciones') %>
-<h1>Todas las Publicaciones (<%= Publication.where("status" => true).count %>)</h1>
+<h1>Todas las Publicaciones (<%= Publication.where("status" => false, "user_id" => current_user).count %>)</h1>
 
 <%= will_paginate %>
 

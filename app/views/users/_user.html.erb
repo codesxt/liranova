@@ -1,6 +1,7 @@
-<li>
+<li class="user_small span12">
   <%= gravatar_for user, size: 52 %>
-  <%= link_to user.name, user %>
+  <%= link_to user.name, user %><br>
+  <%= User.find(user).publications.count %> publicaciones
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>

@@ -24,6 +24,7 @@ Liranova::Application.routes.draw do
   match '/library', to: 'library#index', via: 'get'
   match '/random', to: 'publications#show_random', via: 'get'
   match '/new', to: 'publications#new', via: 'get'
+  match '/show_drafts', to: 'publications#show_drafts', via: 'get'
   match '/feed', to: 'library#show_feed', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

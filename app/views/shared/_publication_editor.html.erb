@@ -6,5 +6,8 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Contenido..." %>
   </div>
+  <div class="form-control">
+  	<%= f.select :status, options_for_select([["Publicado", "true"], ["Borrador", "false"]]) %>
+  </div>
   <%= f.submit "Publicar", class: "btn btn-large btn-primary" %>
 <% end %>
